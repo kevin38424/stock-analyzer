@@ -16,12 +16,15 @@
 - Use named types for every external API response
 
 ## File/Folder Standards
-- `app/` for routes and pages
-- `features/` for UI feature modules (react-bulletproof style)
-- Keep feature internals private; expose UI via `features/<feature>/index.ts`
+- `src/app/` for routes and pages
+- `src/app/api/` for Next.js route handlers only (HTTP adapter layer)
+- `src/features/` for UI feature modules (react-bulletproof style)
+- Keep feature internals private; expose UI via `src/features/<feature>/index.ts`
 - Route pages should import from feature public APIs, not deep paths
-- `lib/` for data fetchers, scoring, utilities
-- `types/` for shared domain models
+- `src/server/` for server-only business logic, repositories, and API helpers
+- `src/lib/` for shared pure utilities/models that can be consumed by both UI and server code
+- `src/types/` for shared cross-feature/domain models only
+- Feature-specific models should live in `src/features/<feature>/types/`
 - `docs/` for technical and business documents
 - `supabase/` for SQL and policies
 

@@ -1,6 +1,38 @@
-node_modules
-.next
+# Dependencies
+node_modules/
+
+# Next.js build outputs
+.next/
+out/
+
+# Env files (keep template)
 .env
-.env.local
-.vercel
-coverage
+.env.*
+!.env.example
+
+# Deployment
+.vercel/
+
+# Test and coverage artifacts
+coverage/
+
+# TypeScript incremental cache
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Potential secret key/cert files
+*.pem
+*.key
+*.p12
+*.crt

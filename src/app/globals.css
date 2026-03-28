@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --app-radius-panel: 0.75rem;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+}
+
+.card {
+  @apply rounded-2xl border border-slate-800 bg-slate-900/80 p-6 shadow-sm;
+}
+
+.badge {
+  @apply inline-flex rounded-full border border-slate-700 px-3 py-1 text-xs font-medium text-slate-300;
+}
+
+@layer components {
+  .app-skeleton {
+    @apply relative overflow-hidden rounded-md bg-slate-800/70;
+  }
+
+  .app-skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(100deg, transparent 15%, rgba(148, 163, 184, 0.26) 48%, transparent 82%);
+    animation: app-skeleton-shimmer 1.5s infinite;
+  }
+
+  .app-panel {
+    @apply rounded-xl border border-slate-800 bg-slate-900/75 p-6;
+  }
+
+  .app-page-header {
+    @apply mb-8;
+  }
+
+  .app-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.24em] text-slate-400;
+    font-family: var(--font-display), sans-serif;
+  }
+
+  .app-page-title {
+    @apply mt-3 text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl;
+    font-family: var(--font-display), sans-serif;
+  }
+
+  .app-page-subtitle {
+    @apply mt-4 max-w-4xl text-base leading-relaxed text-slate-300 sm:text-lg;
+  }
+
+  .app-display {
+    font-family: var(--font-display), sans-serif;
+  }
+
+  .app-data {
+    font-family: var(--font-data), monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes app-skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
